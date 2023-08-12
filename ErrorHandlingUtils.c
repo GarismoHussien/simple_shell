@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _erratoi - converts a string to an integer,handling errors if string contains non-numeric characters or if the result exceeds the maximum integer value
+ * _erratoi - converts a string to an integer,handling errors if string contains non-numeric characters  value
  * @s: the string to be converted
  * Return: 0 if no numbers in string, converted number otherwise
  *       -1 on error
@@ -79,4 +79,37 @@ current %= i;
 __putchar('0' + current);
 count++;
 return (count);
+}
+/**
+ * convert_number - function converts a long integer to a string represent. in a specified base 
+ * @num: number#
+ * @base: base#
+ * @flags: argument flags#
+ *
+ * Return: string#
+ */
+char *convert_number(long int num, int base, int flags)
+{
+static char *array;
+static char buffer[50];
+char sign = 0;
+char *ptr;
+unsigned long n = num;
+if (!(flags & CONVERT_UNSIGNED) && num < 0)
+{
+n = -num;
+sign = '-';
+}
+array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
+ptr = &buffer[49];
+*ptr = '\0';
+do
+{
+*--ptr = array[n % base];
+n /= base;
+}
+while (n != 0);
+if (sign)
+*--ptr = sign;
+return (ptr);
 }
