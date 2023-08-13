@@ -214,4 +214,10 @@ size_t list_len(const list_t *);
 char **list_to_strings(list_t *);
 size_t print_list(const list_t *);
 list_t *node_starts_with(list_t *, char *, char);
-
+/* toem_vars.c */
+int replace_alias(info_t *);
+int replace_string(char **, char *);
+int is_chain(info_t *, char *, size_t *);
+void check_chain(info_t *, char *, size_t *, size_t, size_t);
+int replace_vars(info_t *);
+#endif
