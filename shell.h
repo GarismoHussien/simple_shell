@@ -32,4 +32,28 @@ extern char **environ;
 /* for convert_no.() */
 #define CONVERT_LOWERCASE	1
 #define CONVERT_UNSIGNED	2
+/**
+ * struct passinfo - hold pseudo-arguments to pass thro a func,
+ * allowing uniform prototype for function pointer struct
+ * @arg: a string generated from getline containing arg.
+ * @argv:an array of strings generated from arg.
+ * @history:  history node
+ * @alias: the alias node
+ * @env_changed: on if environ was changed
+ * @err_num: error code for exit()s
+ * @path: a string path for the current command
+ * @cmd_buf: address of pointer to cmd_buf, on if chaining
+ * @cmd_buf_type: CMD_type ||, &&, ;
+ * @readfd: the fd from which to read line input
+ * @argc: the argument count
+ * @line_count: the error count
+ * @linecount_flag: if on count this line of input
+ * @fname: program filename (Titile)
+ * @env: linked list local copy of environ
+ * @environ: custom modified copy of environ from LL env
+ * @status: return status of last exec'd command
+ * @histcount: history line no. count
+ */
+typedef struct passinfo
+{
 
