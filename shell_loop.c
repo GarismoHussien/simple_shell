@@ -20,7 +20,7 @@ _eputchar(BUF_FLUSH);
 r = get_input(info);
 if (r != -1)
 {
-set_info(info,av);
+set_info(info, av);
 builtin_ret = find_builtin(info);
 if (builtin_ret == -1)
 find_cmd(info);
@@ -47,9 +47,9 @@ return (builtin_ret);
  * @info:  parameter & return info struct
  *
  * Return: -1 if builtin not found,
- * 	0 if builtin executed successfully,
- * 	1 if builtin found but not successful,
- * 	2 if builtin signals exit()
+ * 0 if builtin executed successfully,
+ * 1 if builtin found but not successful,
+ * 2 if builtin signals exit()
  */
 int find_builtin(info_t *info)
 {
@@ -76,7 +76,7 @@ return (built_in_ret);
 }
 
 /**
- * find_cmmd - finds a command in PAT
+ * find_cmd - findss  command in PAT
  * @info: parameter & return info struct
  *
  * Return: void
