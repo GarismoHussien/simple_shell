@@ -34,4 +34,24 @@ int unset_alias(info_t *info, char *str)
 	*p = c;
 	return (ret);
 }
+/**
+ * set_alias - the purpose of this function is to set alias to string.
+ * @info: is a struct type used as a parameter.
+ * @str: it is a pointer to the string alias.
+ *
+ * Return:  if success 0 is returned or 1 on error.
+ */
+int set_alias(info_t *info, char *str)
+{
+	char *p;
+
+	p = _strchr(str, '=');
+	if (!p)
+		return (1);
+	if (!*++p)
+		return (unset_alias(info, str));
+
+	unset_alias(info, str);
+	return (add_node_end(&(info->alias), str, 0) == NULL);
+}
 
