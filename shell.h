@@ -47,6 +47,7 @@ char *str;
 } list_t;
 
 /**
+ * @linecount_flag: if on count this line of input
  * struct passinfo - hold pseudo-arguments to pass thro a func,
  * allowing uniform prototype for function pointer struct
  * @arg: a string generated from getline containing arg.
@@ -61,7 +62,6 @@ char *str;
  * @readfd: the fd from which to read line input
  * @argc: the argument count
  * @line_count: the error count
- * @linecount_flag: if on count this line of input
  * @fname: program filename (Titile)
  * @env: linked list local copy of environ
  * @environ: custom modified copy of environ from LL env
