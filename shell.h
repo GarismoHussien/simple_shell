@@ -108,4 +108,68 @@ int hsh(info_t *, char **);
 void find_cmd(info_t *);
 int find_builtin(info_t *);
 void fork_cmd(info_t *);
+/* toem_parser.c */
+int is_cmd(info_t *, char *);
+char *find_path(info_t *, char *, char *);
+char *dup_chars(char *, int, int);
+
+/* loophsh.c */
+int loophsh(char **);
+
+/* toem_errors.c */
+int _putfd(char c, int fd);
+void _eputs(char *);
+int _eputchar(char);
+int _putsfd(char *str, int fd);
+
+/* toem_string.c */
+int _strlen(char *);
+int _strcmp(char *, char *);
+char *starts_with(const char *, const char *);
+char *_strcat(char *, char *);
+
+/* toem_string1.c */
+char *_strcpy(char *, char *);
+char *_strdup(const char *);
+void _puts(char *);
+int _putchar(char);
+
+/* toem_exits.c */
+char *_strncpy(char *, char *, int);
+char *_strchr(char *, char);
+char *_strncat(char *, char *, int);
+
+/* toem_tokenizer.c */
+char **strtow2(char *, char);
+char **strtow(char *, char *);
+
+/* toem_realloc.c */
+char *_memset(char *, char, unsigned int);
+void *_realloc(void *, unsigned int, unsigned int);
+void ffree(char **);
+
+/* toem_memory.c */
+int bfree(void **);
+
+/* toem_atoi.c */
+int _isalpha(int);
+int _atoi(char *);
+int interactive(info_t *);
+int is_delim(char, char *);
+
+/* toem_errors1.c */
+int _erratoi(char *);
+char *convert_number(long int, int, int);
+void remove_comments(char *);
+void print_error(info_t *, char *);
+int print_d(int, int);
+
+/* toem_builtin.c */
+int _myexit(info_t *);
+int _mycd(info_t *);
+int _myhelp(info_t *);
+
+/* toem_builtin1.c */
+int _myhistory(info_t *);
+int _myalias(info_t *);
 
