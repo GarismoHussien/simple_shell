@@ -40,6 +40,18 @@ extern char **environ;
 #define CONVERT_LOWERCASE	1
 #define CONVERT_UNSIGNED	2
 
+/**
+ * struct liststr - singly linked list
+ * @num: no. field
+ * @str: a string
+ * @next: points to the next node
+ */
+typedef struct liststr
+{
+int num;
+struct liststr *next;
+char *str;
+} list_t;
 
 /**
  * struct passinfo - hold pseudo-arguments to pass thro a func,
@@ -88,19 +100,6 @@ int histcount;
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 		0, 0, 0}
-
-/**
- * struct liststr - singly linked list 
- * @num: no. field
- * @str: a string
- * @next: points to the next node
- */
-typedef struct liststr
-{
-int num;
-struct liststr *next;
-char *str;
-} list_t;
 
 /**
  * struct builtin - contains a builtin string and related functionn
