@@ -79,4 +79,16 @@ int histcount;
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 		0, 0, 0}
+/**
+ * struct liststr - singly linked list
+ * @num: no. field
+ * @str: a string
+ * @next: points to the next node
+ */
+typedef struct liststr
+{
+int num;
+struct liststr *next;
+char *str;
+} list_t;
 
