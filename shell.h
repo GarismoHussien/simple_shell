@@ -12,4 +12,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+/* for read or and write buffers */
+#define BUF_FLUSH -1
+#define WRITE_BUF_SIZE 1024
+#define READ_BUF_SIZE 1024
 
