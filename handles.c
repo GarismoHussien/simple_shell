@@ -75,4 +75,20 @@ dir = _getenv(info, "HOME=");
 	}
 	return (0);
 }
+/**
+ * _myhelp - this is to change the current directory of the process.
+ * @info: this is a structure type that has various information,
+ *  Used to maintain constant function prototype.
+ * Return: 0 is always returned.
+ */
+int _myhelp(info_t *info)
+{
+	char **arg_array;
+
+	arg_array = info->argv;
+	_puts("help call works. Function not yet implemented \n");
+	if (0)
+		_puts(*arg_array); /* temp att_unused workaround */
+	return (0);
+}
 
