@@ -70,4 +70,20 @@ int _myunsetenv(info_t *info)
 
 	return (0);
 }
+/**
+ * populate_env_list - this is to make env linked list populated.
+ * @info: this is a structure type of type info_t,
+ *  containing potential arguments.
+ * Return: 0 is always returned.
+ */
+int populate_env_list(info_t *info)
+{
+	list_t *node = NULL;
+	size_t i;
+
+	for (i = 0; environ[i]; i++)
+		add_node_end(&node, environ[i], 0);
+	info->env = node;
+	return (0);
+}
 
