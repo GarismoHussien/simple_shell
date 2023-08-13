@@ -91,4 +91,21 @@ int num;
 struct liststr *next;
 char *str;
 } list_t;
+/**
+ * struct builtin - contains a builtin string and related functionn
+ * @type: the builtin command flagg
+ * @func: the functionn
+ */
+typedef struct builtin
+{
+int (*func)(info_t *);
+char *type;
+} builtin_table;
+
+
+/* toem_shloop.c */
+int hsh(info_t *, char **);
+void find_cmd(info_t *);
+int find_builtin(info_t *);
+void fork_cmd(info_t *);
 
