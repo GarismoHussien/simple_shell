@@ -57,7 +57,6 @@ extern char **environ;
 typedef struct passinfo
 {
 char *fname;
-list_t *env;
 int argc;
 unsigned int line_count;
 int err_num;
@@ -71,6 +70,7 @@ char **argv;
 char *path;
 list_t *history;
 list_t *alias;
+list_t *env;
 char **environ;
 int env_changed;
 int histcount;
