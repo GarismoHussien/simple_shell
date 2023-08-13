@@ -32,4 +32,22 @@ char *_getenv(info_t *info, const char *name)
 	}
 	return (NULL);
 }
+/**
+ * _mysetenv - this function is to modify an existing one,
+ *             or Initialise a new environment variable.
+ * @info: is a structure type of type info_t ,
+ *        Used to maintain constant function prototype.
+ *  Return: 0 is always returned.
+ */
+int _mysetenv(info_t *info)
+{
+	if (info->argc != 3)
+	{
+		_eputs("Incorrect number of arguements\n");
+		return (1);
+	}
+	if (_setenv(info, info->argv[1], info->argv[2]))
+		return (0);
+	return (1);
+}
 
