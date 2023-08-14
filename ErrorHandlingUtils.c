@@ -107,6 +107,7 @@ do {
 *--ptr = array[n % base];
 n /= base;
 }
+{
 while (n != 0);
 if (sign)
 *--ptr = sign;
