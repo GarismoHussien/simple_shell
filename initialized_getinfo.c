@@ -11,9 +11,9 @@ info->path = NULL;
 info->argc = 0;
 }
 /**
- * free_info - set free info_t struct fields
- * @info: struct address
- * @all: true if freeing 
+* free_info - set free info_t struct fields
+*@info: struct address
+* @all: true if freeing 
 */
 void free_info(info_t *info, int all)
 {
