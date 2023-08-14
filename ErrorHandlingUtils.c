@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _erratoi - converts a string to an integer,handling errors if string contains non-numeric characters  value
+ * _erratoi - converts a string to an integer,handling errors
  * @s: the string to be converted
  * Return: 0 if no numbers in string, converted number otherwise
  *       -1 on error
@@ -45,7 +45,7 @@ _eputs(estr);
 }
 
 /**
- * print_d -function prints a decimal (integer) number to a specified file descriptor
+ * print_d -function prints decimal (integer)no. to a specified file descriptori
  * @input: the input
  * @fd: the filedescriptor to write to
  *
@@ -81,7 +81,7 @@ count++;
 return (count);
 }
 /**
- * convert_number - function converts a long integer to a string represent. in a specified base 
+ * convert_number - function converts a long integer to a string represent. in a specified B
  * @num: number#
  * @base: base#
  * @flags: argument flags#
@@ -103,8 +103,7 @@ sign = '-';
 array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
 ptr = &buffer[49];
 *ptr = '\0';
-do
-{
+do {
 *--ptr = array[n % base];
 n /= base;
 }
