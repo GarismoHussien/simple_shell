@@ -118,3 +118,35 @@ print_error(info, "not found\n");
 }
 }
 }
+/**
+ * find_builtin - Search for and execute a built-in cmd
+ * @info: Pointer to the shell information stuct.
+ *This function looks for a specified built-in command
+* Return: -1 if built-in not found,
+ *          0 if built-in executed successfully,
+ *          1 if built-in found but not successful,
+ *          2 if built-in signals an exit()
+ */
+int find_builtin(info_t *info)
+{
+int i, built_in_ret = -1;
+builtin_table builtintbl[] = {
+{"exit", _myexit},
+{"env", _myenv},
+{"help", _myhelp},
+{"history", _myhistory},
+{"setenv", _mysetenv},
+{"unsetenv", _myunsetenv},
+{"cd", _mycd},
+{"alias", _myalias},
+{NULL, NULL}
+};
+for (i = 0; builtintbl[i].type; i++)
+if (_strcmp(info->argv[0], builtintbl[i].type) == 0)
+{
+info->line_count++;
+built_in_ret = builtintbl[i].func(info);
+break;
+}
+return (built_in_ret);
+}
