@@ -82,4 +82,22 @@ return (_strlen(p)); /* return length of current cmd  */
 *buf_p = buf; /* else not chain, pass back buff from _getline() */
 return (r); /* return length  from _getline() of buffer */
 }
+/**
+ * read_buf - reads a buff
+ * @info: parameter struct
+ * @buf: buff
+ * @i: size (Size)
+ *
+ * Return: r
+ */
+ssize_t read_buf(info_t *info, char *buf, size_t *i)
+{
+ssize_t r = 0;
+if (*i)
+return (0);
+r = read(info->readfd, buf, READ_BUF_SIZE);
+if (r >= 0)
+*i = r;
+return (r);
+}
 
