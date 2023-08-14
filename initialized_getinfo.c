@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * clear_info - initializ info_t structure
  * @info: structure address
@@ -15,7 +14,7 @@ info->argc = 0;
  * free_info - set free info_t struct fields
  * @info: struct address
  * @all: true if freeing 
- */
+*/
 void free_info(info_t *info, int all)
 {
 ffree(info->argv);
@@ -37,6 +36,7 @@ bfree((void **)info->cmd_buf);
 if (info->readfd > 2)
 close(info->readfd);
 _putchar(BUF_FLUSH);
+}
 }
 /**
  * set_info - initialize info_t structure
@@ -65,5 +65,3 @@ info->argc = i;
 replace_alias(info);
 replace_vars(info);
 }
-}
-
