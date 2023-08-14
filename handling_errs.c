@@ -62,4 +62,23 @@ int _putfd(char c, int fd)
 		buf[i++] = c;
 	return (1);
 }
+/**
+ * _putsfd - this is to print the input string.
+ * @str: is a pointer type char point to the string to be printed.
+ * @fd: this is the file descriptor to write in.
+ *
+ * Return: the number of chars put
+ */
+int _putsfd(char *str, int fd)
+{
 
+	if (!str)
+		return (0);
+	int i = 0;
+
+	while (*str)
+	{
+		i += _putfd(*str++, fd);
+	}
+	return (i);
+}
