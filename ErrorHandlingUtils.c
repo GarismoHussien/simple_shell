@@ -45,7 +45,7 @@ _eputs(estr);
 }
 
 /**
- * print_d -function prints decimal (integer)no. to a specified file descriptori
+ * print_d -function prints decimal to a specified file descriptori
  * @input: the input
  * @fd: the filedescriptor to write to
  *
@@ -81,7 +81,7 @@ count++;
 return (count);
 }
 /**
- * convert_number - function converts a long integer to a string represent. in a specified B
+ * convert_number - function converts a long integer> string represent.
  * @num: number#
  * @base: base#
  * @flags: argument flags#
@@ -113,7 +113,7 @@ if (sign)
 return (ptr);
 }
 /**
- * remove_comments -removes com. from a string by replacing first instance of '#' ,a null'\0
+ * remove_comments -removes com. from a string ,rep/first instance of '#' ,a null'\0
  * @buf: address of the string to the modify
  *
  * Return: Always 0;
