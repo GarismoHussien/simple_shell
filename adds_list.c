@@ -58,3 +58,22 @@ node = node->next;
 }
 return (0);
 }
+/**
+ * print_list_str - prints only  str element of a list_t linked
+ * @h: pointer to first nodee
+ *
+ * Return: size of list
+ */
+size_t print_list_str(const list_t *h)
+{
+size_t i = 0;
+while (h)
+{
+_puts(h->str ? h->str : "(nil)");
+_puts("\n");
+h = h->next;
+i++;
+}
+return (i);
+}
+
