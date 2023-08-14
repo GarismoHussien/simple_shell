@@ -45,8 +45,8 @@ i++;
 return (info->env_changed);
 }
 /**
- * _setenv - Initialize a new environment variable or modify 
- *       environment variable is a variable that holds information about environment
+ * _setenv - Initialize a new environment variable or modify
+ *  about environment
  * @info: Structure containing potential arguments. Used to maintain
  *        constant function prototype.
  * @var: string env var property
@@ -84,4 +84,3 @@ free(buf);
 info->env_changed = 1;
 return (0);
 }
-
