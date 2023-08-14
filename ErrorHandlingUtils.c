@@ -106,15 +106,13 @@ ptr = &buffer[49];
 do {
 *--ptr = array[n % base];
 n /= base;
-}
-{
-while (n != 0);
+} while (n != 0);
 if (sign)
 *--ptr = sign;
 return (ptr);
 }
 /**
- * remove_comments -removes com. from a string ,rep/first instance of '#' ,a null'\0
+ * remove_comments -removes from a string ,rep/first instance of '#' ,a null'\0
  * @buf: address of the string to the modify
  *
  * Return: Always 0;
