@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * input_buf - buffers chained commands,reads input from the user
- * @info: parameter struct containing information about the shell
- * @buf: address of buffer where the input will be stored.
+ * input_buf - buffers chained commands,reads input from the user(buff chanined cmd)
+ * @info: parameter struct containing information about the shell(param. struct.)
+ * @buf: address of buffer where  input will be stored(address).
  * @len: address of len var representing the length of the buffer
  *
  * Return: bytes read
