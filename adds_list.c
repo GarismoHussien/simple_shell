@@ -78,7 +78,7 @@ return (i);
 }
 /**
  * add_node - adds a node to start of  list
- * @head: address of pointer to headd 
+ * @head: address of pointer to headd
  * @str: str field of nodee
  * @num: node index used byy history
  *
