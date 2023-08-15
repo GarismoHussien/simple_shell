@@ -40,4 +40,26 @@ void _puts(char *str)
 		i++;
 	}
 }
+/**
+ * _strdup -the purpose of this function is to duplicate a string.
+ * @str: is a pointer to the string to have it duplicated.
+ *
+ * Return: the function will return a pointer to the duplicated string.
+ */
+char *_strdup(const char *str)
+{
+	int length = 0;
+	char *ret;
+
+	if (str == NULL)
+		return (NULL);
+	while (*str++)
+		length++;
+	ret = malloc(sizeof(char) * (length + 1));
+	if (!ret)
+		return (NULL);
+	for (length++; length--;)
+		ret[length] = *--str;
+	return (ret);
+}
 
