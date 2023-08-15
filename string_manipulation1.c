@@ -22,4 +22,22 @@ int _putchar(char c)
 		buf[i++] = c;
 	return (1);
 }
+/**
+ * _puts - this function is to print an input string.
+ * @str: this is a pointer that points to the string to be printed.
+ *
+ * Return: Nothing will be returned.
+ */
+void _puts(char *str)
+{
+	int i = 0;
+
+	if (!str)
+		return;
+	while (str[i] != '\0')
+	{
+		_putchar(str[i]);
+		i++;
+	}
+}
 
