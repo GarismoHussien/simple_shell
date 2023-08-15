@@ -19,4 +19,20 @@ char *_strcat(char *dest, char *src)
 	*dest = *src;
 	return (ret);
 }
+/**
+ * starts_with - this function is to checks or lock for wheather,
+ *    needle starts with haystack or no.
+ * @haystack: this is a pointer string to search.
+ * @needle: this is a pointer to the substring to find.
+ *
+ * Return: NULL if any character doesn’t match,
+  *       or a pointer to the next char of haystack.
+ */
+char *starts_with(const char *haystack, const char *needle)
+{
+	while (*needle)
+		if (*needle++ != *haystack++)
+			return (NULL);
+	return ((char *)haystack);
+}
 
