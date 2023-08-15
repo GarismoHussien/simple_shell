@@ -57,4 +57,21 @@ int _strcmp(char *s1, char *s2)
 	else
 		return (*s1 < *s2 ? -1 : 1);
 }
+/**
+ * _strlen - the purpose of this function is,
+ *    to calculate the length of a string.
+ * @s: this is a pointer that points to the string to check.
+ *
+ * Return: 0 if the pointer input is NULL, or the length of the string.
+ */
+int _strlen(char *s)
+{
+	int e = 0;
 
+	if (!s)
+		return (0);
+
+	while (*s++)
+		e++;
+	return (e);
+}
