@@ -62,4 +62,25 @@ char *_strdup(const char *str)
 		ret[length] = *--str;
 	return (ret);
 }
+/**
+ * _strcpy - this function is to copy a string from src to dest.
+ * @dest: this is the destination buffer.
+ * @src: this is the source of the string.
+ *
+ * Return: pointer to the string in dest.
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int e = 0;
+
+	if (dest == src || src == 0)
+		return (dest);
+	while (src[e])
+	{
+		dest[e] = src[e];
+		e++;
+	}
+	dest[e] = 0;
+	return (dest);
+}
 
