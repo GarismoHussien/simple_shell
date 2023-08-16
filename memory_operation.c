@@ -32,4 +32,18 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	free(ptr);
 	return (p);
 }
+/**
+ * ffree - the purpose of this function is to free  allocated array of strings.
+ * @pp: this is a pointer that points to a string.
+ */
+void ffree(char **pp)
+{
+	char **a = pp;
+
+	if (!pp)
+		return;
+	while (*pp)
+		free(*pp++);
+	free(a);
+}
 
