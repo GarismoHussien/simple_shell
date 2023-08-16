@@ -62,4 +62,38 @@ int replace_alias(info_t *info)
 	}
 	return (1);
 }
+/**
+ * check_chain - this function tests or checks we should continue
+ *    chaining based on last status.
+ * @info: this is the parameter and is a struct type.
+ * @buf: this is a pointer the char buffer
+ * @p: this is a pointer and points to the address of the current position in buffer.
+ * @i: this is a variable of type size_t use it to start position in buffer.
+ * @len: this is a variable used to get the length of the buffer.
+ *
+ * Return: Nothing (Void).
+ */
+void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
+{
+	size_t j = *p;
+
+	if (info->cmd_buf_type == CMD_AND)
+	{
+		if (info->status)
+		{
+			buf[i] = 0;
+			j = len;
+		}
+	}
+	if (info->cmd_buf_type == CMD_OR)
+	{
+		if (!info->status)
+		{
+			buf[i] = 0;
+			j = len;
+		}
+	}
+
+	*p = j;
+}
 
