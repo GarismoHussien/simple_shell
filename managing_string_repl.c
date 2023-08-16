@@ -96,4 +96,44 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 
 	*p = j;
 }
+/**
+ * replace_vars - the purpose is to replace the environment variables in the, *break_down_sreing.c
+ * @info: is  a pointer of struct type.
+ *
+ * Return: if replaced 1 will be returned, or returns 0 if not replaced.
+ */
+int replace_vars(info_t *info)
+{
+	int i = 0;
+	list_t *node;
+
+	for (i = 0; info->argv[i]; i++)
+	{
+		if (info->argv[i][0] != '$' || !info->argv[i][1])
+			continue;
+
+		if (!_strcmp(info->argv[i], "$?"))
+		{
+			replace_string(&(info->argv[i]),
+					_strdup(convert_number(info->status, 10, 0)));
+			continue;
+		}
+		if (!_strcmp(info->argv[i], "$$"))
+		{
+			replace_string(&(info->argv[i]),
+					_strdup(convert_number(getpid(), 10, 0)));
+			continue;
+		}
+		node = node_starts_with(info->env, &info->argv[i][1], '=');
+		if (node)
+		{
+			replace_string(&(info->argv[i]),
+					_strdup(_strchr(node->str, '=') + 1));
+			continue;
+		}
+		replace_string(&info->argv[i], _strdup(""));
+
+	}
+	return (0);
+}
 
