@@ -1,5 +1,6 @@
 #include "shell.h"
 
+
 /**
  * dup_chars - this function is to duplicate characters from (pathstr).
  * @pathstr:  is a pointer that points to the PATH string.
