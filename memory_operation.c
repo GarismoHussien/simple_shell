@@ -46,4 +46,19 @@ void ffree(char **pp)
 		free(*pp++);
 	free(a);
 }
+/**
+ * _memset - the purpose of this function is to
+ *          fill memory with a constant byte.
+ * @s: this is the pointer to the memory area.
+ * @b: this is a variable refers to the byte to fill *s with.
+ * @n: this is a variable that refers to the amount of bytes to be filled.
+ * Return: (s)  and this is a pointer to the memory area s.
+ */
+char *_memset(char *s, char b, unsigned int n)
+{
+	unsigned int i;
 
+	for (i = 0; i < n; i++)
+		s[i] = b;
+	return (s);
+}
