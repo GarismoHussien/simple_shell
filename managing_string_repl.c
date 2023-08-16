@@ -1,7 +1,8 @@
 #include "shell.h"
 
 /**
- * is_chain - this function is to check whether current char in buffer is a chain delimiter.
+ * is_chain - this function is to check whether current
+ *    char in buffer is a chain delimiter.
  * @info: this is the parameter and is struct type.
  * @buf: this is a pointer point to the char buffer.
  * @p:  this pointer is the address of the current position in the buffer.
@@ -35,7 +36,8 @@ int is_chain(info_t *info, char *buf, size_t *p)
 	return (1);
 }
 /**
- * replace_alias - this function is to replace an aliases in the break_down_string.c
+ * replace_alias - this function is to replace an aliases
+ *     in the break_down_string.c
  * @info: this is the parameter and is a struct type.
  *
  * Return: if replaced 1 will be returned, or returns 0 if not replaced.
@@ -66,8 +68,11 @@ int replace_alias(info_t *info)
  * check_chain - this function tests or checks we should continue
  *    chaining based on last status.
  * @info: this is the parameter and is a struct type.
+ *
  * @buf: this is a pointer the char buffer
- * @p: this is a pointer and points to the address of the current position in buffer.
+ * @p: this is a pointer and points to the address
+ * of the current position in buffer.
+ *
  * @i: this is a variable of type size_t use it to start position in buffer.
  * @len: this is a variable used to get the length of the buffer.
  *
@@ -97,7 +102,8 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 	*p = j;
 }
 /**
- * replace_vars - the purpose is to replace the environment variables in the, *break_down_sreing.c
+ * replace_vars - the purpose is to replace the environment variables
+ *     in the break_down_sreing.c
  * @info: is  a pointer of struct type.
  *
  * Return: if replaced 1 will be returned, or returns 0 if not replaced.
@@ -135,5 +141,19 @@ int replace_vars(info_t *info)
 
 	}
 	return (0);
+}
+/**
+ * replace_string - this function is to replace the old ,
+ *     string with the new string.
+ * @old: is a pointer that points to the address of old string.
+ * @new: is a pointer of char type pointing to the new string.
+ *
+ * Return: if replaced 1 will be returned, or returns 0 if not replaced.
+ */
+int replace_string(char **old, char *new)
+{
+	free(*old);
+	*old = new;
+	return (1);
 }
 
