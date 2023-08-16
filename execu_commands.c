@@ -19,4 +19,28 @@ char *dup_chars(char *pathstr, int start, int stop)
 	buf[k] = 0;
 	return (buf);
 }
+/**
+ * is_cmd - this function is to determine or check  if a file
+ *          is an executable command or not.
+ * @info: is a pointer info struct type.
+ *
+ * @path: is a pointer of char type
+ *     pointing to the path of the file.
+ *
+ * Return: if true 1 will be returned or  0 if not.
+ */
+int is_cmd(info_t *info, char *path)
+{
+	struct stat st;
+
+	(void)info;
+	if (!path || stat(path, &st))
+		return (0);
+
+	if (st.st_mode & S_IFREG)
+	{
+		return (1);
+	}
+	return (0);
+}
 
