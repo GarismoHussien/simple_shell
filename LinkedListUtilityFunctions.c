@@ -57,7 +57,7 @@ node = node->next;
 return (NULL);
 }
 /**
- * print_list - prints all elements 
+ * print_list - prints all elements
  * @h: pointer to first nodee
  *
  * Return: size of list
