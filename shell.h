@@ -113,7 +113,7 @@ char *type;
 } builtin_table;
 
 
-/* toem_shloop.c */
+/* toem_execute_external_cmd.c */
 int hsh(info_t *, char **);
 void find_cmd(info_t *);
 int find_builtin(info_t *);
@@ -145,7 +145,7 @@ char *_strdup(const char *);
 void _puts(char *);
 int _putchar(char);
 
-/* toem_exits.c */
+/* toem_string_shell_utils.c */
 char *_strncpy(char *, char *, int);
 char *_strchr(char *, char);
 char *_strncat(char *, char *, int);
@@ -168,7 +168,7 @@ int _atoi(char *);
 int interactive(info_t *);
 int is_delim(char, char *);
 
-/* toem_errors1.c */
+/* toem_ErrorHandlingUtils.c */
 int _erratoi(char *);
 char *convert_number(long int, int, int);
 void remove_comments(char *);
@@ -184,7 +184,7 @@ int _myhelp(info_t *);
 int _myhistory(info_t *);
 int _myalias(info_t *);
 
-/*toem_getline.c */
+/*toem_StringManipulation.c */
 ssize_t get_input(info_t *);
 int _getline(info_t *, char **, size_t *);
 void sigintHandler(int);
@@ -201,7 +201,7 @@ int _mysetenv(info_t *);
 int _myunsetenv(info_t *);
 int populate_env_list(info_t *);
 
-/* toem_getenv.c */
+/* toem_environ_getenv.c */
 char **get_environ(info_t *);
 int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
