@@ -220,7 +220,7 @@ list_t *add_node_end(list_t **, const char *, int);
 size_t print_list_str(const list_t *);
 void free_list(list_t **);
 
-/* toem_lists1.c */
+/* toem_LinkedListUtilityFunctions.c */
 ssize_t get_node_index(list_t *, list_t *);
 size_t list_len(const list_t *);
 char **list_to_strings(list_t *);
