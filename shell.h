@@ -159,7 +159,7 @@ char *_memset(char *, char, unsigned int);
 void *_realloc(void *, unsigned int, unsigned int);
 void ffree(char **);
 
-/* toem_memory.c */
+/* toem_SafeMemoryManagement.c */
 int bfree(void **);
 
 /*utilty_functions.c*/
@@ -189,7 +189,7 @@ ssize_t get_input(info_t *);
 int _getline(info_t *, char **, size_t *);
 void sigintHandler(int);
 
-/* toem_getinfo.c */
+/* toem_initialized_getinfo.c */
 void clear_info(info_t *);
 void set_info(info_t *, char **);
 void free_info(info_t *, int);
