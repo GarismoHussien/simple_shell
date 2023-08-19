@@ -37,7 +37,8 @@ do {
 if (*s == c)
 return (s);
 }
-while (*s++ != '\0');
+while { (*s++ != '\0');
+}
 return (NULL);
 }
 /**
