@@ -9,9 +9,10 @@
  */
 int _myhistory(info_t *info)
 {
-print_list(info->history);
-return (0);
+	print_list(info->history);
+	return (0);
 }
+
 /**
  * unset_alias - the purpose of this function is to set alias to string.
  * @info: is a structure type.
@@ -34,6 +35,7 @@ int unset_alias(info_t *info, char *str)
 	*p = c;
 	return (ret);
 }
+
 /**
  * set_alias - the purpose of this function is to set alias to string.
  * @info: is a struct type used as a parameter.
@@ -54,10 +56,33 @@ int set_alias(info_t *info, char *str)
 	unset_alias(info, str);
 	return (add_node_end(&(info->alias), str, 0) == NULL);
 }
+
+/**
+ * print_alias - this function is to print an alias string
+ * @node: is a pointer that points to the alias node
+ *
+ * Return: if success 0 is returned otherwise 1 on error
+ */
+int print_alias(list_t *node)
+{
+	char *p = NULL, *a = NULL;
+
+	if (node)
+	{
+		p = _strchr(node->str, '=');
+		for (a = node->str; a <= p; a++)
+		_putchar(*a);
+		_putchar('\'');
+		_puts(p + 1);
+		_puts("'\n");
+		return (0);
+	}
+	return (1);
+}
 /**
  * _myalias - the purpose is to copy the alias builtin command.
- * @info: is a structure type containing potential arguments,
- *         Used to maintain constant function prototype.
+ * @info: is a structure type containing potential arguments.
+ *          Used to maintain constant function prototype.
  *  Return: if success 0 is returned or 1 on error.
  */
 int _myalias(info_t *info)
@@ -87,3 +112,4 @@ int _myalias(info_t *info)
 
 	return (0);
 }
+

@@ -119,7 +119,7 @@ void find_cmd(info_t *);
 int find_builtin(info_t *);
 void fork_cmd(info_t *);
 
-/* toem_parser.c */
+/* execu_commands.c */
 int is_cmd(info_t *, char *);
 char *find_path(info_t *, char *, char *);
 char *dup_chars(char *, int, int);
@@ -127,19 +127,19 @@ char *dup_chars(char *, int, int);
 /* loophsh.c */
 int loophsh(char **);
 
-/* toem_errors.c */
+/* handling_errs.c */
 int _putfd(char c, int fd);
 void _eputs(char *);
 int _eputchar(char);
 int _putsfd(char *str, int fd);
 
-/* toem_string.c */
+/*  string_manipulation.c*/
 int _strlen(char *);
 int _strcmp(char *, char *);
 char *starts_with(const char *, const char *);
 char *_strcat(char *, char *);
 
-/* toem_string1.c */
+/*  string_manipulation1.c*/
 char *_strcpy(char *, char *);
 char *_strdup(const char *);
 void _puts(char *);
@@ -150,11 +150,11 @@ char *_strncpy(char *, char *, int);
 char *_strchr(char *, char);
 char *_strncat(char *, char *, int);
 
-/* toem_tokenizer.c */
+/* break_down_string.c */
 char **strtow2(char *, char);
 char **strtow(char *, char *);
 
-/* toem_realloc.c */
+/* memory_operation.c */
 char *_memset(char *, char, unsigned int);
 void *_realloc(void *, unsigned int, unsigned int);
 void ffree(char **);
@@ -162,7 +162,7 @@ void ffree(char **);
 /* toem_memory.c */
 int bfree(void **);
 
-/* toem_atoi.c */
+/*utilty_functions.c*/
 int _isalpha(int);
 int _atoi(char *);
 int interactive(info_t *);
@@ -175,12 +175,12 @@ void remove_comments(char *);
 void print_error(info_t *, char *);
 int print_d(int, int);
 
-/* toem_builtin.c */
+/*handles.c */
 int _myexit(info_t *);
 int _mycd(info_t *);
 int _myhelp(info_t *);
 
-/* toem_builtin1.c */
+/* managing_alia_hist.c*/
 int _myhistory(info_t *);
 int _myalias(info_t *);
 
@@ -194,7 +194,7 @@ void clear_info(info_t *);
 void set_info(info_t *, char **);
 void free_info(info_t *, int);
 
-/* toem_environ.c */
+/* manage_env_var.c */
 char *_getenv(info_t *, const char *);
 int _myenv(info_t *);
 int _mysetenv(info_t *);
@@ -206,7 +206,7 @@ char **get_environ(info_t *);
 int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
 
-/* toem_history.c */
+/*  history_linked_list.c*/
 int write_history(info_t *info);
 int read_history(info_t *info);
 char *get_history_file(info_t *info);
@@ -228,7 +228,7 @@ size_t print_list(const list_t *);
 list_t *node_starts_with(list_t *, char *, char);
 
 
-/* toem_vars.c */
+/* managing_string_repl.c */
 int replace_alias(info_t *);
 int replace_string(char **, char *);
 int is_chain(info_t *, char *, size_t *);
