@@ -213,7 +213,7 @@ char *get_history_file(info_t *info);
 int build_history_list(info_t *info, char *buf, int linecount);
 int renumber_history(info_t *info);
 
-/* toem_lists.c */
+/* toem_adds_list.c*/
 int delete_node_at_index(list_t **, unsigned int);
 list_t *add_node(list_t **, const char *, int);
 list_t *add_node_end(list_t **, const char *, int);
