@@ -4,7 +4,7 @@
  * @ac: Argument count.
  * @av: Argument vector.
  *This is  main function that serves as entry point of shell program.
- * Return: 0 on success, 1 on error
+ * Return: if success 0 will be returned otherwisr 1 on error.
  */
 int main(int ac, char **av)
 {
